@@ -7,33 +7,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     
-    @IBOutlet var nomeTextField: UITextField?
-    @IBOutlet var caloriaTextField: UITextField?
+    let refeicoes = ["Churros", "Batata"]
 
-    @IBAction func adicionar(_ sender: Any) {
-        guard let nomeRefeicao = nomeTextField?.text else {
-            print("guard nomeRefeicao")
-            return
-        }
-        
-        guard let caloriaRefeicao = caloriaTextField?.text else {
-            print("guard caloriaRefeicao")
-            return
-        }
-        
-        let nomeValue = nomeRefeicao
-        let caloria = Double(caloriaRefeicao)
-        
-        guard let caloriaValue = caloria else {
-            print("guard caloriaValue")
-            return
-        }
-        
-        let refeicao = Refeicao(nome: nomeValue, calorias: caloriaValue)
-        refeicao.itens.append(Item(nome: nomeValue, calorias: caloriaValue))
-        print(refeicao.totalDeCalorias())
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("tableviewcontroller carregado")
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return refeicoes.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let celula = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        let refeicao = refeicoes[indexPath.row]
+        celula.textLabel?.text = refeicao
+        return celula
     }
 }
 
