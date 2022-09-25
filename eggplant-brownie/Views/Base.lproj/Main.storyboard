@@ -111,7 +111,13 @@
                             <outlet property="delegate" destination="dwo-Uj-u1Y" id="KPe-fu-eqx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Zdi-Zf-vUY"/>
+                    <navigationItem key="navigationItem" id="Zdi-Zf-vUY">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="PKe-Uu-ct0">
+                            <connections>
+                                <segue destination="cdI-hA-RG7" kind="show" id="lXt-XW-T2O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ooW-D1-pwR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,6 +176,7 @@
                         <viewLayoutGuide key="safeArea" id="IGO-Ib-JT1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cBd-eW-sAx"/>
                     <connections>
                         <outlet property="caloriaTextField" destination="rpy-b9-9VZ" id="iEA-b1-MMs"/>
                         <outlet property="nomeTextField" destination="uoH-Kz-T0B" id="3aq-3q-bb0"/>
