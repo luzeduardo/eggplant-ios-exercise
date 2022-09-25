@@ -13,6 +13,8 @@
 		B51269EB28D8E42F00F4AEFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51269E928D8E42F00F4AEFC /* Main.storyboard */; };
 		B51269ED28D8E43000F4AEFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B51269EC28D8E43000F4AEFC /* Assets.xcassets */; };
 		B51269F028D8E43000F4AEFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51269EE28D8E43000F4AEFC /* LaunchScreen.storyboard */; };
+		B51269FA28DA726500F4AEFC /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51269F928DA726500F4AEFC /* Refeicao.swift */; };
+		B51269FC28DA796100F4AEFC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51269FB28DA796100F4AEFC /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,9 @@
 		B51269EC28D8E43000F4AEFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B51269EF28D8E43000F4AEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B51269F128D8E43000F4AEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B51269F828D9D29400F4AEFC /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B51269F928DA726500F4AEFC /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
+		B51269FB28DA796100F4AEFC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +61,42 @@
 		B51269E228D8E42F00F4AEFC /* eggplant-brownie */ = {
 			isa = PBXGroup;
 			children = (
+				B51269FD28DA7A6A00F4AEFC /* Models */,
+				B51269FF28DA7A9000F4AEFC /* Views */,
+				B51269FE28DA7A7F00F4AEFC /* Controllers */,
 				B51269E328D8E42F00F4AEFC /* AppDelegate.swift */,
 				B51269E528D8E42F00F4AEFC /* SceneDelegate.swift */,
-				B51269E728D8E42F00F4AEFC /* ViewController.swift */,
-				B51269E928D8E42F00F4AEFC /* Main.storyboard */,
 				B51269EC28D8E43000F4AEFC /* Assets.xcassets */,
 				B51269EE28D8E43000F4AEFC /* LaunchScreen.storyboard */,
 				B51269F128D8E43000F4AEFC /* Info.plist */,
+				B51269F828D9D29400F4AEFC /* MyPlayground.playground */,
 			);
 			path = "eggplant-brownie";
+			sourceTree = "<group>";
+		};
+		B51269FD28DA7A6A00F4AEFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B51269F928DA726500F4AEFC /* Refeicao.swift */,
+				B51269FB28DA796100F4AEFC /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B51269FE28DA7A7F00F4AEFC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B51269E728D8E42F00F4AEFC /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B51269FF28DA7A9000F4AEFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B51269E928D8E42F00F4AEFC /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51269FC28DA796100F4AEFC /* Item.swift in Sources */,
 				B51269E828D8E42F00F4AEFC /* ViewController.swift in Sources */,
 				B51269E428D8E42F00F4AEFC /* AppDelegate.swift in Sources */,
 				B51269E628D8E42F00F4AEFC /* SceneDelegate.swift in Sources */,
+				B51269FA28DA726500F4AEFC /* Refeicao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +334,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eduardoluzpereira8319.eggplant-brownie";
+				PRODUCT_BUNDLE_IDENTIFIER = "eduardo-luz.eu.eggplant-brownie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -328,7 +362,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eduardoluzpereira8319.eggplant-brownie";
+				PRODUCT_BUNDLE_IDENTIFIER = "eduardo-luz.eu.eggplant-brownie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
