@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var tableViewController: RefeicoesTableViewController?
+
     @IBOutlet var nomeTextField: UITextField?
     @IBOutlet var caloriaTextField: UITextField?
 
@@ -32,8 +34,8 @@ class ViewController: UIViewController {
         }
         
         let refeicao = Refeicao(nome: nomeValue, calorias: caloriaValue)
-        refeicao.itens.append(Item(nome: nomeValue, calorias: caloriaValue))
-        print(refeicao.totalDeCalorias())
+
+        tableViewController?.add(refeicao)
 
         navigationController?.popViewController(animated: true)
     }

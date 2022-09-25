@@ -9,7 +9,7 @@ import UIKit
 
 class RefeicoesTableViewController : UITableViewController {
     
-    let refeicoes = [Refeicao(nome: "Macarrão", calorias: 100),
+    var refeicoes = [Refeicao(nome: "Macarrão", calorias: 100),
                      Refeicao(nome: "Chocolate", calorias: 99.3)]
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -20,5 +20,9 @@ class RefeicoesTableViewController : UITableViewController {
         let celula = UITableViewCell(style: .default, reuseIdentifier: nil)
         celula.textLabel?.text = refeicoes[indexPath.row].nome
         return celula
+    }
+
+    func add(_ refeicao: Refeicao) {
+        refeicoes.append(refeicao)
     }
 }
