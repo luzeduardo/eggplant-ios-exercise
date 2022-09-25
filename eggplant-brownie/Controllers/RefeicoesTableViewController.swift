@@ -23,7 +23,9 @@ class RefeicoesTableViewController : UITableViewController {
     }
 
     func add(_ refeicao: Refeicao) {
+        print("Add \(refeicao.nome) chamado")
         refeicoes.append(refeicao)
+        tableView.reloadData()
     }
     
     //  se prepara antes de seguir para o prox view controller a ser apresentado
