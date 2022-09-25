@@ -25,4 +25,11 @@ class RefeicoesTableViewController : UITableViewController {
     func add(_ refeicao: Refeicao) {
         refeicoes.append(refeicao)
     }
+    
+    //  se prepara antes de seguir para o prox view controller a ser apresentado
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationController = segue.destination as? ViewController {
+            destinationController.tableViewController = self
+        }
+    }
 }
