@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         let refeicao = Refeicao(nome: nomeValue, calorias: caloriaValue)
         refeicao.itens.append(Item(nome: nomeValue, calorias: caloriaValue))
         print(refeicao.totalDeCalorias())
+
+        navigationController?.popViewController(animated: true)
     }
 }
 
