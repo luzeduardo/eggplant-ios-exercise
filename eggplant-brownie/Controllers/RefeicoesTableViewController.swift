@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RefeicoesTableViewController : UITableViewController {
+class RefeicoesTableViewController : UITableViewController, ViewControllerDelegate {
     
     var refeicoes = [Refeicao(nome: "Macarrão", calorias: 100),
                      Refeicao(nome: "Chocolate", calorias: 99.3)]
@@ -30,8 +30,8 @@ class RefeicoesTableViewController : UITableViewController {
     
     //  se prepara antes de seguir para o prox view controller a ser apresentado
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationController = segue.destination as? ViewController {
-            destinationController.tableViewController = self
+        if let viewController = segue.destination as? ViewController {
+            viewController.delegate = self
         }
     }
 }

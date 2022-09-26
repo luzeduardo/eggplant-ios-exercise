@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol ViewControllerDelegate {
+    func add(_ refeicao: Refeicao)
+}
+
 class ViewController: UIViewController {
     
-    var tableViewController: RefeicoesTableViewController?
+    var delegate: RefeicoesTableViewController?
 
     @IBOutlet var nomeTextField: UITextField?
     @IBOutlet var caloriaTextField: UITextField?
@@ -35,7 +39,7 @@ class ViewController: UIViewController {
         
         let refeicao = Refeicao(nome: nomeValue, calorias: caloriaValue)
 
-        tableViewController?.add(refeicao)
+        delegate?.add(refeicao)
 
         navigationController?.popViewController(animated: true)
     }
