@@ -20,6 +20,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var nomeTextField: UITextField?
     @IBOutlet var caloriaTextField: UITextField?
     
+    // MARK: - View life cycle
+    override func viewDidLoad() {
+        let botaoAdicionaritem = UIBarButtonItem(title: "Adiciona Item", style: .plain, target: self, action: Selector("adicionarItem"))
+        navigationItem.rightBarButtonItem = botaoAdicionaritem
+    }
+
+    @objc func adicionarItem() {
+        print("Adicionar item na lista")
+    }
+
     //MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itens.count
