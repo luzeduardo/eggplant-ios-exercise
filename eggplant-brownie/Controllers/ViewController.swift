@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: - View life cycle
     override func viewDidLoad() {
-        let botaoAdicionaritem = UIBarButtonItem(title: "Adiciona Item", style: .plain, target: self, action: Selector("adicionarItem"))
+        let botaoAdicionaritem = UIBarButtonItem(title: "Adiciona Item", style: .plain, target: self, action: #selector(adicionarItem))
         navigationItem.rightBarButtonItem = botaoAdicionaritem
     }
 
