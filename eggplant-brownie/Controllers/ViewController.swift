@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ViewControllerDelegate {
+protocol AdicionaRefeicaoDelegate {
     func add(_ refeicao: Refeicao)
 }
 
