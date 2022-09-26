@@ -14,7 +14,8 @@ protocol AdicionaRefeicaoDelegate {
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Atributes
     var delegate: RefeicoesTableViewController?
-    var itens: [String] = ["Brasil", "EUA"]
+    var itens: [Item] = [Item(nome: "Cominho", calorias: 1), Item(nome: "Sal", calorias: 2), Item(nome: "Sazon", calorias: 3)]
+    var itensSelecionados: [Item] = []
     // MARK: - IBOutlets
     @IBOutlet var nomeTextField: UITextField?
     @IBOutlet var caloriaTextField: UITextField?
@@ -26,25 +27,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = UITableViewCell(style: .default, reuseIdentifier: nil)
-        celula.textLabel?.text = itens[indexPath.row]
+        celula.textLabel?.text = itens[indexPath.row].nome
         return celula
     }
 
     //MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let celula = tableView.cellForRow(at: indexPath) else { return }
-        if (celula.accessoryType == .none) {
+        let linha = indexPath.row
+        if celula.accessoryType == .none {
             celula.accessoryType = .checkmark
+            itensSelecionados.append(itens[linha])
         } else {
             celula.accessoryType = .none
+            let item = itens[linha]
+            guard let position = itensSelecionados.firstIndex(of: item) else { return }
+            itensSelecionados.remove(at: position)
         }
     }
-
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        guard let celula = tableView.cellForRow(at: indexPath) else { return }
-        celula.accessoryType = .none
-    }
-    
     
     // MARK: - IBActions
     @IBAction func adicionar(_ sender: Any) {
@@ -66,7 +66,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return
         }
         
-        let refeicao = Refeicao(nome: nomeValue, calorias: caloriaValue)
+        let refeicao = Refeicao(nome: nomeValue, calorias: caloriaValue, itens: itensSelecionados)
 
         delegate?.add(refeicao)
 

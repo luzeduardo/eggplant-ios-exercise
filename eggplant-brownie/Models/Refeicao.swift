@@ -12,9 +12,10 @@ class Refeicao: NSObject {
     let calorias: Double
     var itens: Array<Item> = []
     
-    init(nome: String, calorias: Double) {
+    init(nome: String, calorias: Double, itens: [Item] = []) {
         self.calorias = calorias
         self.nome = nome
+        self.itens = itens
         
     }
     
