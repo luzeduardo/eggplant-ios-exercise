@@ -11,7 +11,7 @@ protocol AdicionaRefeicaoDelegate {
     func add(_ refeicao: Refeicao)
 }
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Atributes
     var delegate: RefeicoesTableViewController?
     var itens: [String] = ["Brasil", "EUA"]
@@ -28,6 +28,21 @@ class ViewController: UIViewController, UITableViewDataSource {
         let celula = UITableViewCell(style: .default, reuseIdentifier: nil)
         celula.textLabel?.text = itens[indexPath.row]
         return celula
+    }
+
+    //MARK: - UITableViewDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let celula = tableView.cellForRow(at: indexPath) else { return }
+        if (celula.accessoryType == .none) {
+            celula.accessoryType = .checkmark
+        } else {
+            celula.accessoryType = .none
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let celula = tableView.cellForRow(at: indexPath) else { return }
+        celula.accessoryType = .none
     }
     
     

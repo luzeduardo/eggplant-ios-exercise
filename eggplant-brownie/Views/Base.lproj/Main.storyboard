@@ -96,6 +96,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="cdI-hA-RG7" id="qFl-Dh-0UO"/>
+                                    <outlet property="delegate" destination="cdI-hA-RG7" id="Z2Y-VL-gKe"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdj-at-DJ4">
