@@ -9,13 +9,19 @@ import UIKit
 
 class AdicionarViewController: UIViewController {
 
+    // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: - IBAction
 
 
+    @IBAction func adicionarItem(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 
