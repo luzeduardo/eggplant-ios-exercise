@@ -115,6 +115,7 @@
                     <navigationItem key="navigationItem" id="cBd-eW-sAx"/>
                     <connections>
                         <outlet property="caloriaTextField" destination="rpy-b9-9VZ" id="iEA-b1-MMs"/>
+                        <outlet property="itensTableView" destination="IBc-H0-Sid" id="XrB-AI-OrY"/>
                         <outlet property="nomeTextField" destination="uoH-Kz-T0B" id="3aq-3q-bb0"/>
                     </connections>
                 </viewController>

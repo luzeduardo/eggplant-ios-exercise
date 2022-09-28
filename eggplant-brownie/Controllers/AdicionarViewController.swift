@@ -7,7 +7,28 @@
 
 import UIKit
 
+protocol AdicionaItemsDelegate {
+    func add(_ item: Item)
+}
+
 class AdicionarViewController: UIViewController {
+
+    // MARK: - IBOutlets
+    @IBOutlet weak var caloriasTextfield: UITextField!
+    @IBOutlet weak var nomeTextfield: UITextField!
+
+    // MARK: - Atributos
+    var delegate: AdicionaItemsDelegate?
+
+    init(delegate: AdicionaItemsDelegate) {
+        //nibName nome da view que chama o Controller
+        super.init(nibName: "AdicionarViewController", bundle: nil)
+        self.delegate = delegate
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     // MARK: - View life cycle
     override func viewDidLoad() {
@@ -15,11 +36,14 @@ class AdicionarViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+
     // MARK: - IBAction
 
-
     @IBAction func adicionarItem(_ sender: Any) {
+        guard let nomeValue = nomeTextfield.text, let calorias = caloriasTextfield.text else { return }
+        guard let caloriasValue = Double(calorias) else { return }
+        let item = Item(nome: nomeValue, calorias: caloriasValue)
+        delegate?.add(item)
         navigationController?.popViewController(animated: true)
     }
     /*

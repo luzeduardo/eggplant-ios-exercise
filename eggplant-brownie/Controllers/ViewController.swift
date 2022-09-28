@@ -11,15 +11,15 @@ protocol AdicionaRefeicaoDelegate {
     func add(_ refeicao: Refeicao)
 }
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AdicionaItemsDelegate {
     // MARK: - Atributes
     var delegate: RefeicoesTableViewController?
-    var itens: [Item] = [Item(nome: "Cominho", calorias: 1), Item(nome: "Sal", calorias: 2), Item(nome: "Sazon", calorias: 3)]
+    var itens: [Item] = []
     var itensSelecionados: [Item] = []
     // MARK: - IBOutlets
     @IBOutlet var nomeTextField: UITextField?
     @IBOutlet var caloriaTextField: UITextField?
-    
+    @IBOutlet weak var itensTableView: UITableView!
     // MARK: - View life cycle
     override func viewDidLoad() {
         let botaoAdicionaritem = UIBarButtonItem(title: "Adiciona Item", style: .plain, target: self, action: #selector(adicionarItem))
@@ -27,8 +27,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     @objc func adicionarItem() {
-        let adicionarItensViewController = AdicionarViewController()
+        let adicionarItensViewController = AdicionarViewController(delegate: self)
         navigationController?.pushViewController(adicionarItensViewController, animated: true)
+    }
+    
+    @objc func add(_ item: Item) {
+        itens.append(item)
+        itensTableView.reloadData()
     }
 
     //MARK: - UITableViewDataSource
