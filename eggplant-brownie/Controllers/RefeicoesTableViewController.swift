@@ -25,8 +25,16 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
         return celula
     }
 
-    @objc func longPress() {
-        print("Long press")
+    @objc func longPress(gesture: UIGestureRecognizer) {
+        if gesture.state == .began {
+            print("began long press")
+        }
+        if gesture.state == .ended {
+            print("ended long press")
+        }
+        if gesture.state == .cancelled {
+            print("cancelled long press")
+        }
     }
 
     func add(_ refeicao: Refeicao) {
