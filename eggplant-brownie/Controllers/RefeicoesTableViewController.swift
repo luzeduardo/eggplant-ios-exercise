@@ -27,7 +27,13 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
 
     @objc func longPress(gesture: UIGestureRecognizer) {
         if gesture.state == .began {
-            print("began long press")
+            //gesture.view returns the selected cell that we can cast to the correct type using as!
+            let celula = gesture.view as! UITableViewCell
+            // we must check it due to the method returns and optional
+            guard let indexPath = tableView.indexPath(for: celula) else { return }
+
+            let selectedRefeicao = refeicoes[indexPath.row]
+            print("began long press on \(selectedRefeicao.nome)")
         }
         if gesture.state == .ended {
             print("ended long press")
