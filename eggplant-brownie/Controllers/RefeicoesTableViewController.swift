@@ -19,7 +19,14 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = UITableViewCell(style: .default, reuseIdentifier: nil)
         celula.textLabel?.text = refeicoes[indexPath.row].nome
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
+        celula.addGestureRecognizer(longPress)
         return celula
+    }
+
+    @objc func longPress() {
+        print("Long press")
     }
 
     func add(_ refeicao: Refeicao) {
@@ -27,7 +34,7 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
         refeicoes.append(refeicao)
         tableView.reloadData()
     }
-    
+
     //  se prepara antes de seguir para o prox view controller a ser apresentado
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? ViewController {
