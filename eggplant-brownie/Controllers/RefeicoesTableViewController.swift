@@ -33,7 +33,12 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
             guard let indexPath = tableView.indexPath(for: celula) else { return }
 
             let selectedRefeicao = refeicoes[indexPath.row]
-            print("began long press on \(selectedRefeicao.nome)")
+            let alertTitle = "felicidade: \(selectedRefeicao.felicidade)"
+
+            let alert = UIAlertController(title: selectedRefeicao.nome, message: alertTitle, preferredStyle: .alert)
+            let botaoCancelar = UIAlertAction(title: "Ok", style: .cancel)
+            alert.addAction(botaoCancelar)
+            present(alert, animated: true)
         }
         if gesture.state == .ended {
             print("ended long press")
