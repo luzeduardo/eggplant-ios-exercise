@@ -39,7 +39,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Zdi-Zf-vUY">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="PKe-Uu-ct0">
+                        <barButtonItem key="rightBarButtonItem" title="Adicionar Refeição" id="PKe-Uu-ct0">
                             <connections>
                                 <segue destination="cdI-hA-RG7" kind="show" id="lXt-XW-T2O"/>
                             </connections>
@@ -65,8 +65,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calorias:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shb-34-9z5">
-                                <rect key="frame" x="51" y="239" width="67" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Felicidade:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shb-34-9z5">
+                                <rect key="frame" x="51" y="239" width="82" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -74,12 +74,6 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MTX-ut-K2z">
                                 <rect key="frame" x="177" y="163" width="163" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rpy-b9-9VZ">
-                                <rect key="frame" x="177" y="226" width="163" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -108,13 +102,19 @@
                                     <action selector="adicionar:" destination="cdI-hA-RG7" eventType="touchUpInside" id="dDm-S3-8yQ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IVa-3r-Qye">
+                                <rect key="frame" x="177" y="232" width="163" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IGO-Ib-JT1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="cBd-eW-sAx"/>
                     <connections>
-                        <outlet property="caloriaTextField" destination="rpy-b9-9VZ" id="iEA-b1-MMs"/>
+                        <outlet property="felicidadeTextField" destination="IVa-3r-Qye" id="NOB-Le-CkF"/>
                         <outlet property="itensTableView" destination="IBc-H0-Sid" id="XrB-AI-OrY"/>
                         <outlet property="nomeTextField" destination="uoH-Kz-T0B" id="3aq-3q-bb0"/>
                     </connections>

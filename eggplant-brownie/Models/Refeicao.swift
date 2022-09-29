@@ -9,11 +9,11 @@ import UIKit
 
 class Refeicao: NSObject {
     let nome: String
-    let calorias: Double
+    let felicidade: Double
     var itens: Array<Item> = []
     
-    init(nome: String, calorias: Double, itens: [Item] = []) {
-        self.calorias = calorias
+    init(nome: String, felicidade: Double, itens: [Item] = []) {
+        self.felicidade = felicidade
         self.nome = nome
         self.itens = itens
         

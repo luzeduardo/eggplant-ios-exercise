@@ -18,11 +18,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var itensSelecionados: [Item] = []
     // MARK: - IBOutlets
     @IBOutlet var nomeTextField: UITextField?
-    @IBOutlet var caloriaTextField: UITextField?
+    @IBOutlet weak var felicidadeTextField: UITextField?
     @IBOutlet weak var itensTableView: UITableView!
     // MARK: - View life cycle
     override func viewDidLoad() {
-        let botaoAdicionaritem = UIBarButtonItem(title: "Adiciona Item", style: .plain, target: self, action: #selector(adicionarItem))
+        let botaoAdicionaritem = UIBarButtonItem(title: "Adiciona Ingrediente", style: .plain, target: self, action: #selector(adicionarItem))
         navigationItem.rightBarButtonItem = botaoAdicionaritem
     }
 
@@ -69,20 +69,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return
         }
         
-        guard let caloriaRefeicao = caloriaTextField?.text else {
-            print("guard caloriaRefeicao")
+        guard let felicidadeRefeicao = felicidadeTextField?.text else {
+            print("guard felicidadeRefeicao")
             return
         }
         
         let nomeValue = nomeRefeicao
-        let caloria = Double(caloriaRefeicao)
+        let felicidade = Double(felicidadeRefeicao)
         
-        guard let caloriaValue = caloria else {
-            print("guard caloriaValue")
+        guard let felicidadeValue = felicidade else {
+            print("guard felicidadeRefeicao")
             return
         }
         
-        let refeicao = Refeicao(nome: nomeValue, calorias: caloriaValue, itens: itensSelecionados)
+        let refeicao = Refeicao(nome: nomeValue, felicidade: felicidadeValue, itens: itensSelecionados)
 
         delegate?.add(refeicao)
 
