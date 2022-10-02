@@ -35,8 +35,11 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
             let selectedRefeicao = refeicoes[indexPath.row]
 
             let alert = UIAlertController(title: selectedRefeicao.nome, message: selectedRefeicao.detalhes(), preferredStyle: .alert)
-            let botaoCancelar = UIAlertAction(title: "Ok", style: .cancel)
+            let botaoCancelar = UIAlertAction(title: "Cancelar", style: .cancel)
             alert.addAction(botaoCancelar)
+            
+            let botaoRemover = UIAlertAction(title: "Deseja remover?", style: .destructive, handler: removeRefeicao)
+            alert.addAction(botaoRemover)
             present(alert, animated: true)
         }
         if gesture.state == .ended {
@@ -51,6 +54,11 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
         print("Add \(refeicao.nome) chamado")
         refeicoes.append(refeicao)
         tableView.reloadData()
+    }
+    
+    func removeRefeicao(alerta: UIAlertAction) {
+//        let refeicaoPosition = refeicoes.index(of: refeicao)
+//        refeicoes.remove(at: refeicaoPosition)
     }
 
     //  se prepara antes de seguir para o prox view controller a ser apresentado
