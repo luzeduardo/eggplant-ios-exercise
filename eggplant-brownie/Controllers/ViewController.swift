@@ -67,15 +67,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    // MARK: - IBActions
-    @IBAction func adicionar(_ sender: Any) {
+    func recuperaRefeicaoForm() -> Refeicao? {
         guard let nomeRefeicao = nomeTextField?.text else {
             print("guard nomeRefeicao")
-            return
+            Alerta(viewController: self).exibe(mensagem: "Erro ao ler campo nome refeição")
+            return nil
         }
         
         guard let felicidadeRefeicao = felicidadeTextField?.text else {
             print("guard felicidadeRefeicao")
+            Alerta(viewController: self).exibe(mensagem: "Erro ao ler campo felicidade")
             return
         }
         
@@ -84,12 +85,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         guard let felicidadeValue = felicidade else {
             print("guard felicidadeRefeicao")
-            return
+            return nil
         }
         
         let refeicao = Refeicao(nome: nomeValue, felicidade: felicidadeValue, itens: itensSelecionados)
-
-        delegate?.add(refeicao)
+        return refeicao
+    }
+    
+    // MARK: - IBActions
+    @IBAction func adicionar(_ sender: Any) {
+        let refeicao = recuperaRefeicaoForm()
+        guard let refeicaoValue = refeicao else { return }
+        delegate?.add(refeicaoValue)
 
         navigationController?.popViewController(animated: true)
     }
