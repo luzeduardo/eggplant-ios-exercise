@@ -19,6 +19,7 @@
 		B5C7ADEE28E26AC00025B752 /* AdicionarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C7ADEC28E26AC00025B752 /* AdicionarViewController.swift */; };
 		B5C7ADEF28E26AC00025B752 /* AdicionarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C7ADED28E26AC00025B752 /* AdicionarViewController.xib */; };
 		B5C7ADF128EA33B50025B752 /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C7ADF028EA33B50025B752 /* Alerta.swift */; };
+		B5C7ADF328EA51800025B752 /* RemoveRefeicaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C7ADF228EA51800025B752 /* RemoveRefeicaoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		B5C7ADEC28E26AC00025B752 /* AdicionarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarViewController.swift; sourceTree = "<group>"; };
 		B5C7ADED28E26AC00025B752 /* AdicionarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdicionarViewController.xib; sourceTree = "<group>"; };
 		B5C7ADF028EA33B50025B752 /* Alerta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerta.swift; sourceTree = "<group>"; };
+		B5C7ADF228EA51800025B752 /* RemoveRefeicaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveRefeicaoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				B5C7ADEC28E26AC00025B752 /* AdicionarViewController.swift */,
 				B51269E728D8E42F00F4AEFC /* ViewController.swift */,
 				B5126A0028E107C100F4AEFC /* RefeicoesTableViewController.swift */,
+				B5C7ADF228EA51800025B752 /* RemoveRefeicaoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				B5C7ADF128EA33B50025B752 /* Alerta.swift in Sources */,
 				B51269FC28DA796100F4AEFC /* Item.swift in Sources */,
 				B51269E828D8E42F00F4AEFC /* ViewController.swift in Sources */,
+				B5C7ADF328EA51800025B752 /* RemoveRefeicaoViewController.swift in Sources */,
 				B51269E428D8E42F00F4AEFC /* AppDelegate.swift in Sources */,
 				B5126A0128E107C200F4AEFC /* RefeicoesTableViewController.swift in Sources */,
 				B5C7ADEE28E26AC00025B752 /* AdicionarViewController.swift in Sources */,
