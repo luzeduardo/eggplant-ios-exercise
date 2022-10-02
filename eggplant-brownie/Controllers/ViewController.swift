@@ -77,7 +77,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         guard let felicidadeRefeicao = felicidadeTextField?.text else {
             print("guard felicidadeRefeicao")
             Alerta(viewController: self).exibe(mensagem: "Erro ao ler campo felicidade")
-            return
         }
         
         let nomeValue = nomeRefeicao
@@ -95,7 +94,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - IBActions
     @IBAction func adicionar(_ sender: Any) {
         let refeicao = recuperaRefeicaoForm()
-        guard let refeicaoValue = refeicao else { return }
+        guard let refeicaoValue = refeicao else {
+            Alerta(viewController: self).exibe(mensagem: "Erro ao ler dados do formulário")
+        }
         delegate?.add(refeicaoValue)
 
         navigationController?.popViewController(animated: true)
