@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - IBOutlets
     @IBOutlet var nomeTextField: UITextField?
     @IBOutlet weak var felicidadeTextField: UITextField?
-    @IBOutlet weak var itensTableView: UITableView!
+    @IBOutlet weak var itensTableView: UITableView?
     // MARK: - View life cycle
     override func viewDidLoad() {
         let botaoAdicionaritem = UIBarButtonItem(title: "Adiciona Ingrediente", style: .plain, target: self, action: #selector(adicionarItem))
@@ -33,7 +33,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @objc func add(_ item: Item) {
         itens.append(item)
-        itensTableView.reloadData()
+        if let tableView = itensTableView {
+            tableView.reloadData()
+        } else {
+            let alertaAction = UIAlertAction(title: "ok", style: .cancel)
+            let alertaControl = UIAlertController(title: "Desculpe", message: "não foi possível atualizar a tabela!", preferredStyle: .alert)
+            alertaControl.addAction(alertaAction)
+            present(alertaControl, animated: true)
+        }
     }
 
     //MARK: - UITableViewDataSource
