@@ -35,17 +35,16 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
             let refeicaoIndex = indexPath.row
             let selectedRefeicao = refeicoes[refeicaoIndex]
 
-            func removeRefeicao(alerta: UIAlertAction) {
-                print("remover refeição: \(selectedRefeicao.nome)")
-                refeicoes.remove(at: refeicaoIndex)
-                tableView.reloadData()
-            }
-
             let alert = UIAlertController(title: selectedRefeicao.nome, message: selectedRefeicao.detalhes(), preferredStyle: .alert)
             let botaoCancelar = UIAlertAction(title: "Cancelar", style: .cancel)
             alert.addAction(botaoCancelar)
             
-            let botaoRemover = UIAlertAction(title: "Deseja remover?", style: .destructive, handler: removeRefeicao)
+            let botaoRemover = UIAlertAction(title: "Deseja remover?", style: .destructive, handler: {
+                // alerta is UIAlertAction required in the handler as param specified in UIAlertAction definition
+                alerta in
+                self.refeicoes.remove(at: refeicaoIndex)
+                self.tableView.reloadData()
+            })
             alert.addAction(botaoRemover)
             present(alert, animated: true)
         }
