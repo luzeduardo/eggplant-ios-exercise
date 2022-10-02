@@ -32,7 +32,14 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
             // we must check it due to the method returns and optional
             guard let indexPath = tableView.indexPath(for: celula) else { return }
 
-            let selectedRefeicao = refeicoes[indexPath.row]
+            let refeicaoIndex = indexPath.row
+            let selectedRefeicao = refeicoes[refeicaoIndex]
+
+            func removeRefeicao(alerta: UIAlertAction) {
+                print("remover refeição: \(selectedRefeicao.nome)")
+                refeicoes.remove(at: refeicaoIndex)
+                tableView.reloadData()
+            }
 
             let alert = UIAlertController(title: selectedRefeicao.nome, message: selectedRefeicao.detalhes(), preferredStyle: .alert)
             let botaoCancelar = UIAlertAction(title: "Cancelar", style: .cancel)
@@ -54,11 +61,6 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
         print("Add \(refeicao.nome) chamado")
         refeicoes.append(refeicao)
         tableView.reloadData()
-    }
-    
-    func removeRefeicao(alerta: UIAlertAction) {
-//        let refeicaoPosition = refeicoes.index(of: refeicao)
-//        refeicoes.remove(at: refeicaoPosition)
     }
 
     //  se prepara antes de seguir para o prox view controller a ser apresentado
