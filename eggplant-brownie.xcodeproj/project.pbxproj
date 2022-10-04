@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50EAEC828EC704E0075F6E2 /* RefeicaoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EAEC728EC704E0075F6E2 /* RefeicaoDAO.swift */; };
 		B51269E428D8E42F00F4AEFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51269E328D8E42F00F4AEFC /* AppDelegate.swift */; };
 		B51269E628D8E42F00F4AEFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51269E528D8E42F00F4AEFC /* SceneDelegate.swift */; };
 		B51269E828D8E42F00F4AEFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51269E728D8E42F00F4AEFC /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B50EAEC728EC704E0075F6E2 /* RefeicaoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicaoDAO.swift; sourceTree = "<group>"; };
 		B51269E028D8E42F00F4AEFC /* eggplant-brownie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eggplant-brownie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51269E328D8E42F00F4AEFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B51269E528D8E42F00F4AEFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				B51269F928DA726500F4AEFC /* Refeicao.swift */,
 				B51269FB28DA796100F4AEFC /* Item.swift */,
 				B5C7ADF028EA33B50025B752 /* Alerta.swift */,
+				B50EAEC728EC704E0075F6E2 /* RefeicaoDAO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				B51269FC28DA796100F4AEFC /* Item.swift in Sources */,
 				B51269E828D8E42F00F4AEFC /* ViewController.swift in Sources */,
 				B5C7ADF328EA51800025B752 /* RemoveRefeicaoViewController.swift in Sources */,
+				B50EAEC828EC704E0075F6E2 /* RefeicaoDAO.swift in Sources */,
 				B51269E428D8E42F00F4AEFC /* AppDelegate.swift in Sources */,
 				B5126A0128E107C200F4AEFC /* RefeicoesTableViewController.swift in Sources */,
 				B5C7ADEE28E26AC00025B752 /* AdicionarViewController.swift in Sources */,
