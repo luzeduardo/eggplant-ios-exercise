@@ -39,6 +39,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let alerta = Alerta(viewController: self)
             alerta.exibe(titulo: "Desculpe", mensagem: "não foi possível atualizar a tabela!")
         }
+
+        do {
+            let dados = try NSKeyedArchiver.archivedData(withRootObject: itens, requiringSecureCoding: false)
+            guard let caminho = recuperaDiretorio() else { return }
+            try dados.write(to: caminho)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     //MARK: - UITableViewDataSource
