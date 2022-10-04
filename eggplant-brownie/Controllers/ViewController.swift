@@ -24,15 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         let botaoAdicionaritem = UIBarButtonItem(title: "Adiciona Ingrediente", style: .plain, target: self, action: #selector(adicionarItem))
         navigationItem.rightBarButtonItem = botaoAdicionaritem
-
-        do {
-            guard let diretorio = recuperaDiretorio() else { return }
-            let dados = try Data(contentsOf: diretorio)
-            let itemsSalvos = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(dados)
-            itens = itemsSalvos as! [Item]
-        } catch {
-            print(error.localizedDescription)
-        }
+        recuperaItens()
     }
 
     @objc func adicionarItem() {
@@ -42,20 +34,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @objc func add(_ item: Item) {
         itens.append(item)
+        ItemDAO().save(itens)
+
         if let tableView = itensTableView {
             tableView.reloadData()
         } else {
             let alerta = Alerta(viewController: self)
             alerta.exibe(titulo: "Desculpe", mensagem: "não foi possível atualizar a tabela!")
         }
+    }
 
-        do {
-            let dados = try NSKeyedArchiver.archivedData(withRootObject: itens, requiringSecureCoding: false)
-            guard let caminho = recuperaDiretorio() else { return }
-            try dados.write(to: caminho)
-        } catch {
-            print(error.localizedDescription)
-        }
+    func recuperaItens() {
+        guard let itensRecuperados = ItemDAO().recupera() else { return }
+        itens = itensRecuperados
     }
 
     //MARK: - UITableViewDataSource
@@ -82,12 +73,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             guard let position = itensSelecionados.firstIndex(of: item) else { return }
             itensSelecionados.remove(at: position)
         }
-    }
-    
-    func recuperaDiretorio(path: String = "itens") -> URL? {
-        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
-        let caminho = diretorio.appendingPathComponent(path)
-        return caminho
     }
     
     func recuperaRefeicaoForm() -> Refeicao? {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B50EAEC828EC704E0075F6E2 /* RefeicaoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EAEC728EC704E0075F6E2 /* RefeicaoDAO.swift */; };
+		B50EAECA28EC732F0075F6E2 /* ItemDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EAEC928EC732F0075F6E2 /* ItemDAO.swift */; };
 		B51269E428D8E42F00F4AEFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51269E328D8E42F00F4AEFC /* AppDelegate.swift */; };
 		B51269E628D8E42F00F4AEFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51269E528D8E42F00F4AEFC /* SceneDelegate.swift */; };
 		B51269E828D8E42F00F4AEFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51269E728D8E42F00F4AEFC /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		B50EAEC728EC704E0075F6E2 /* RefeicaoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicaoDAO.swift; sourceTree = "<group>"; };
+		B50EAEC928EC732F0075F6E2 /* ItemDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDAO.swift; sourceTree = "<group>"; };
 		B51269E028D8E42F00F4AEFC /* eggplant-brownie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eggplant-brownie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51269E328D8E42F00F4AEFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B51269E528D8E42F00F4AEFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				B51269FB28DA796100F4AEFC /* Item.swift */,
 				B5C7ADF028EA33B50025B752 /* Alerta.swift */,
 				B50EAEC728EC704E0075F6E2 /* RefeicaoDAO.swift */,
+				B50EAEC928EC732F0075F6E2 /* ItemDAO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			files = (
 				B5C7ADF128EA33B50025B752 /* Alerta.swift in Sources */,
 				B51269FC28DA796100F4AEFC /* Item.swift in Sources */,
+				B50EAECA28EC732F0075F6E2 /* ItemDAO.swift in Sources */,
 				B51269E828D8E42F00F4AEFC /* ViewController.swift in Sources */,
 				B5C7ADF328EA51800025B752 /* RemoveRefeicaoViewController.swift in Sources */,
 				B50EAEC828EC704E0075F6E2 /* RefeicaoDAO.swift in Sources */,
