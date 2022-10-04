@@ -28,7 +28,7 @@ class Refeicao: NSObject, NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         nome = aDecoder.decodeObject(forKey: "nome") as! String
-        felicidade = aDecoder.decodeObject(forKey: "felicidade") as! Double
+        felicidade = aDecoder.decodeDouble(forKey: "felicidade")
         itens = aDecoder.decodeObject(forKey: "itens") as! Array<Item>
     }
     

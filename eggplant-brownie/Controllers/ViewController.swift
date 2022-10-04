@@ -67,6 +67,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    func recuperaDiretorio(path: String = "itens") -> URL? {
+        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let caminho = diretorio.appendingPathComponent(path)
+        return caminho
+    }
+    
     func recuperaRefeicaoForm() -> Refeicao? {
         guard let nomeRefeicao = nomeTextField?.text else {
             print("guard nomeRefeicao")

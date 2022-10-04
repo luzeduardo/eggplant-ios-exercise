@@ -12,6 +12,27 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
     var refeicoes = [Refeicao(nome: "Macarrão", felicidade: 100),
                      Refeicao(nome: "Chocolate", felicidade: 99.3)]
     
+    override func viewDidLoad() {
+        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        //Returns a URL by appending the specified path component to self.
+        let caminho = diretorio.appendingPathComponent("refeicao")
+        do {
+            guard let caminho = recuperaCaminho() else { return }
+            let data = try Data(contentsOf: caminho)
+            guard let refeicoesSalvas = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? Array<Refeicao> else { return }
+            refeicoes = refeicoesSalvas
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func recuperaCaminho(path: String = "refeicao") -> URL? {
+        // returns a directory to be used to persist data
+        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let caminho = diretorio.appendingPathComponent(path)
+        return caminho
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return refeicoes.count
     }
@@ -54,6 +75,15 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
         print("Add \(refeicao.nome) chamado")
         refeicoes.append(refeicao)
         tableView.reloadData()
+        
+        guard let caminho = recuperaCaminho() else { return }
+        do {
+            // NSKeyedArchiver requires the use of a try that should be invoked inside a do catch block
+            let data = try NSKeyedArchiver.archivedData(withRootObject: refeicoes, requiringSecureCoding: false)
+            try data.write(to: caminho)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     //  se prepara antes de seguir para o prox view controller a ser apresentado
