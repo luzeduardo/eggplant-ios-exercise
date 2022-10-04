@@ -13,9 +13,7 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
                      Refeicao(nome: "Chocolate", felicidade: 99.3)]
     
     override func viewDidLoad() {
-        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
         //Returns a URL by appending the specified path component to self.
-        let caminho = diretorio.appendingPathComponent("refeicao")
         do {
             guard let caminho = recuperaCaminho() else { return }
             let data = try Data(contentsOf: caminho)
